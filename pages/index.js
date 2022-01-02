@@ -15,6 +15,11 @@ export default function Home() {
     if (!term) return;
     router.push(`/search?term=${term}`);
   };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      search(event);
+    }
+  };
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <Head>
@@ -43,6 +48,7 @@ export default function Home() {
           <SearchIcon className="h-6 w-6 mr-3 text-zinc-500" />
           <input
             type="text"
+            onKeyDown={handleKeyDown}
             ref={searchInputRef}
             className="flex-grow bg-inherit focus:outline-none "
           />
