@@ -14,7 +14,11 @@ function Header() {
     if (!term) return;
     router.push(`/search?term=${term}`);
   };
-
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      search(event);
+    }
+  };
   return (
     <header className="sticky top-0 bg-[#202124]">
       <div className="flex w-full p-6 items-center">
@@ -36,6 +40,7 @@ function Header() {
             ref={searchInputRef}
             type="text"
             defaultValue={router.query.term}
+            onKeyDown={handleKeyDown}
             className="flex-grow w-full focus:outline-none bg-inherit"
           />
           <XIcon
