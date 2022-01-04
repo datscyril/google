@@ -54,7 +54,7 @@ export default function Home() {
           />
         </div>
 
-        <div className=" hidden flex-col w-1/2 space-y-2 justify-center mt-7 sm:flex sm:space-y-0 sm:flex-row sm:space-x-4">
+        <div className="flex flex-col w-1/2 space-y-2 justify-center mt-7 sm:flex sm:space-y-0 sm:flex-row sm:space-x-4">
           <button className="btn" onClick={search}>
             Google Search
           </button>
